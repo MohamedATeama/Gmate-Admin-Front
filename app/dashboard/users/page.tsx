@@ -28,8 +28,16 @@ export default function Users() {
   const [modalMode, setModalMode] = useState<"add" | "edit">("add");
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  interface UserFormData {
+    name: string;
+    email: string;
+    password?: string;
+    confirmPassword?: string;
+    role: string;
+  }
   
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<UserFormData>({
     name: "",
     email: "",
     password: "",

@@ -40,7 +40,7 @@ export const updateUser = async (id: string, data: {name?: string, email?: strin
   }
 };
 
-export const createUser = async (data: {name: string, email: string, password: string, role: string}) => {
+export const createUser = async (data: {name: string, email: string, password?: string, confirmPassword?: string, role: string}) => {
   try {
     const response = await api.post(`/users`, data);
     return response.data;
