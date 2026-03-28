@@ -3,7 +3,7 @@ import api from '@/api/axios';
 export const getIndex = async () => {
   try {
     const res = await api.get("/contact");
-    return res.data;
+    return res.data.data;
   } catch (error) {
     console.log("ERROR", error);
     throw error;
